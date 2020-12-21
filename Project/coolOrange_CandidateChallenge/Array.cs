@@ -31,19 +31,32 @@ namespace coolOrange_CandidateChallenge
 
         public static void Swap(int[] array, int position1, int position2)
         {
-            int t = array[position1];
+            int temp = array[position1];
             array[position1] = array[position2];
-            array[position2] = t;
+            array[position2] = temp;
         }
 
         public static int[] CreateRandomArray(int size, int minValue, int maxValue)
         {
-            var arr = new int[size];
+            var array = new int[size];
             for ( int i = 0; i<size; i++ )
             {
-                arr[i] = new Random().Next(minValue, maxValue);
+                array[i] = new Random().Next(minValue, maxValue);
             }
-            return arr;
+            return array;
+        }
+
+        public static int[,] CreateRandomMatrix(int rows, int columns, int minValue, int maxValue)
+        {
+            int[,] array2D = new int[rows, columns];
+            for ( int i = 0; i<rows; i++)
+            {
+                for (int j = 0; j<columns; j++)
+                {
+                    array2D[i, j] = new Random().Next();
+                }
+            }
+            return array2D;
         }
     }
 }

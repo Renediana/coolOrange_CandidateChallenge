@@ -62,15 +62,43 @@ namespace coolOrange_CandidateChallenge
         public static int[,] CopyArray(int[] array)
         {
             int[,] array2D = new int[2, array.Length];
-            for ( int i = 0; i<2; i++ )
+            for (int j = 0; j<array.Length; j++)
             {
-                for (int j = 0; j<array.Length; j++)
-                {
-                    array2D[i, j] += array[j];
-                }
+                array2D[0, j] = array[j];
+                array2D[1, j] = array[j];
             }
             return array2D;
         }
 
+        public static int FindInSortedArray(int[] array, int number)
+        {
+            if (array.ToList().Contains(number))
+            {
+                int min = 0;
+                int max = array.Length - 1;
+
+                while (min <= max)
+                {
+                    int mid = (min + max) / 2;
+                    if (number == array[mid])
+                    {
+                        return ++mid;
+                    }
+                    else if (number < array[mid])
+                    {
+                        max = mid - 1;
+                    }
+                    else
+                    {
+                        min = mid + 1;
+                    }
+                }
+                return -1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
     }
 }

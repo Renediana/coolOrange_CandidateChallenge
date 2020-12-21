@@ -22,10 +22,10 @@ namespace coolOrange_CandidateChallenge
             return array
                 .ToList()
                 .IndexOf(new List<int>()
-            {
-                array[position1],
-                array[position2]
-            }
+                {
+                    array[position1],
+                    array[position2]
+                }
                 .Min());
         }
 
@@ -34,6 +34,16 @@ namespace coolOrange_CandidateChallenge
             int t = array[position1];
             array[position1] = array[position2];
             array[position2] = t;
+        }
+
+        public static int[] CreateRandomArray(int size, int minValue, int maxValue)
+        {
+            var arr = new int[size];
+            for ( int i = 0; i<size; i++ )
+            {
+                arr[i] = new Random().Next(minValue, maxValue);
+            }
+            return arr;
         }
     }
 }

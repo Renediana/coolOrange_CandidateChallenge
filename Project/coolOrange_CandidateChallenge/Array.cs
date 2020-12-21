@@ -53,10 +53,24 @@ namespace coolOrange_CandidateChallenge
             {
                 for (int j = 0; j<columns; j++)
                 {
-                    array2D[i, j] = new Random().Next();
+                    array2D[i, j] = new Random().Next(minValue, maxValue);
                 }
             }
             return array2D;
         }
+
+        public static int[,] CopyArray(int[] array)
+        {
+            int[,] array2D = new int[2, array.Length];
+            for ( int i = 0; i<2; i++ )
+            {
+                for (int j = 0; j<array.Length; j++)
+                {
+                    array2D[i, j] += array[j];
+                }
+            }
+            return array2D;
+        }
+
     }
 }

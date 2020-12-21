@@ -28,5 +28,12 @@ namespace coolOrange_CandidateChallenge
             }
                 .Min());
         }
+
+        public static void Swap(int[] array, int position1, int position2)
+        {
+            int t = array[position1];
+            array[position1] = array[position2];
+            array[position2] = t;
+        }
     }
 }

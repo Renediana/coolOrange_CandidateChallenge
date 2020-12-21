@@ -17,5 +17,16 @@ namespace coolOrange_CandidateChallenge
             .Max();
         }
 
+        public static int FindMinPosition(int[] array, int position1, int position2)
+        {
+            return array
+                .ToList()
+                .IndexOf(new List<int>()
+            {
+                array[position1],
+                array[position2]
+            }
+                .Min());
+        }
     }
 }

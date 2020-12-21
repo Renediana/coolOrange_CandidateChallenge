@@ -8,6 +8,14 @@ namespace coolOrange_CandidateChallenge
 {
     public class Array
     {
-        // Todo
+        public static int FindMaxValue(int[] array, int position1, int position2)
+        {
+            return new List<int>() 
+            { 
+                array[position1], 
+                array[position2] }
+            .Max();
+        }
+
     }
 }

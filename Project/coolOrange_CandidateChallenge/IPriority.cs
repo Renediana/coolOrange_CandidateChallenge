@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace coolOrange_CandidateChallenge
 {
-    class Program
+    public interface IPriority
     {
-
+        void SetPriority(string level);
+        int GetPriority();
     }
 }

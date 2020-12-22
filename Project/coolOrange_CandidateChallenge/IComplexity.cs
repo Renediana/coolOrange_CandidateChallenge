@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace coolOrange_CandidateChallenge
 {
-    class Program
+    interface IComplexity
     {
-
+        void SetComplexity(int level);
+        int GetComplexity();
     }
 }

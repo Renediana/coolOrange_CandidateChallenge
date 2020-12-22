@@ -28,11 +28,14 @@ namespace coolOrange_CandidateChallenge
                 eatingLunch,
                 programming
             };
-
+            Console.WriteLine("TO-DO\n\n---------\n\n");
             foreach (Task t in tasks)
             {
-                Console.WriteLine($"{t.GetType().Name} priority:{t.GetPriority()} complexity: {t.GetComplexity()}");
+                Console.WriteLine($"{t.Name} priority: {t.GetPriority()} complexity: {t.GetComplexity()}");
             }
+            tasks.Sort();
+            Console.WriteLine($"\n{tasks[0].Name} is one of the most important tasks");
+            Console.ReadKey();
         }
     }
 }

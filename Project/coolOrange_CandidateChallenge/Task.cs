@@ -14,16 +14,13 @@ namespace coolOrange_CandidateChallenge
             Priority = "MID_PRIORITY";
         }
 
-        private string Name { get; set; }
+        public string Name { get; private set; }
         private string Priority { get; set; }
         private int Complexity { get; set; }
 
         public int CompareTo(Task task)
         {
-            if ( task.Priority == this.Priority)
-                return 1;
-            else
-                return 0;
+            return this.Priority.CompareTo(task.Priority);
         }
 
         public int GetComplexity()

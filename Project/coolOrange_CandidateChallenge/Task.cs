@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace coolOrange_CandidateChallenge
 {
-    class Task : IPriority, IComplexity, IComparable<Task>
+    public class Task : IPriority, IComplexity, IComparable<Task>
     {
         public Task(string name)
         {

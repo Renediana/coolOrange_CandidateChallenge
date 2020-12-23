@@ -10,23 +10,23 @@ namespace coolOrange_CandidateChallenge
     {
         public static int FindMaxValue(int[] array, int position1, int position2)
         {
-            return new List<int>() 
-            { 
-                array[position1], 
-                array[position2] }
-            .Max();
+            return array
+                    .Skip(position1)
+                    .Take(position2-position1)
+                    .ToArray()
+                    .Max();
         }
 
         public static int FindMinPosition(int[] array, int position1, int position2)
         {
             return array
                 .ToList()
-                .IndexOf(new List<int>()
-                {
-                    array[position1],
-                    array[position2]
-                }
-                .Min());
+                .IndexOf(array
+                        .Skip(position1)
+                        .Take(position2 - position1)
+                        .ToArray()
+                        .Min()
+                        );
         }
 
         public static void Swap(int[] array, int position1, int position2)
@@ -34,6 +34,20 @@ namespace coolOrange_CandidateChallenge
             int temp = array[position1];
             array[position1] = array[position2];
             array[position2] = temp;
+        }
+
+        public static void ShiftLeftByOne(int[] array, int position1, int position2)
+        {
+            var new_array = array.Skip(position1).Take(position2-position1).ToArray();
+            var shifted_array = new_array.Skip(1).Concat(new int[] { new_array[0] });
+
+            var result = String
+                .Join(",", array)
+                .Replace(
+                String.Join(",", new_array), 
+                String.Join(",", shifted_array)
+                ).ToArray()
+                .Select( num => Convert.ToInt32(num));
         }
 
         public static int[] CreateRandomArray(int size, int minValue, int maxValue)
